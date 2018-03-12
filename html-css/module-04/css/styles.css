@@ -72,11 +72,16 @@ h2:after {
 	overflow: hidden;
 	margin-bottom: 30px;
 }
+.product img {
+    display: block;
+    max-width: 100%;
+
+}
 .product a{
     display: inline-block;
-	width: 80%;
-    height: 40px;
+    width: 81.4%;
     margin-right: -4px;
+    height: 40px;
 	background: #333333;
 	color: #fff;
 	font-size: 18px;
@@ -90,7 +95,7 @@ h2:after {
     display: inline-block;
 	width: 20%;
 	margin-left: -4px;
-	height: 40px;
+    height: 40px;
 	background-color: #999999;
 	color: #fff;
 	font-size: 18px;
@@ -104,10 +109,10 @@ h2:after {
 .product:nth-of-type(n+5) {
     margin-bottom: 0;
 }
-.product a:hover {
+.product:hover a {
     background: #1abc9c;
 }
-.price:hover {
+.product:hover span {
     background: #7fd9c7
 }
 .articles figure {
