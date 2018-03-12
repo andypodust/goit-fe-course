@@ -4,7 +4,6 @@
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
-
 .wrapper {
     width: 1110px;
     margin: auto;
@@ -75,7 +74,6 @@ h2:after {
 .product img {
     display: block;
     max-width: 100%;
-
 }
 .product a{
     display: inline-block;
@@ -130,7 +128,6 @@ h2:after {
     font-size: 18px; 
     line-height: 26px;
     font-weight: 400;
-    
 }
 .articles figcaption::after {
     display: block;
