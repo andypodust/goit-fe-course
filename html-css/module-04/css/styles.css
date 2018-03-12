@@ -96,10 +96,11 @@ h2:after {
     height: 40px;
 	background-color: #999999;
 	color: #fff;
-	font-size: 18px;
+    font-size: 18px;
+    text-align: center;
 	line-height: 32px;
     text-transform: uppercase;
-    padding: 5px 0 5px 10px;
+    padding: 5px 10px 5px 10px;
 }
 .product:nth-of-type(4n+1) {
     margin-left: 0;
