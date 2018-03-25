@@ -290,6 +290,7 @@ a {
     border: 0;
     left: 245px;
     top: 223px;
+    cursor: pointer;
 }
 .right_b:hover {
     position: absolute;
@@ -299,6 +300,7 @@ a {
     border: 0;
     left: 1252px;
     top: 223px;
+    cursor: pointer;
 }
 
 .product:hover .card {
