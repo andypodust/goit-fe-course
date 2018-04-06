@@ -253,7 +253,6 @@
 }
 .form_name:invalid,
 .form_email:invalid,
-.form_subject:invalid,
 .message:invalid {
     box-shadow: 0 0 5px 3px transparent
     
