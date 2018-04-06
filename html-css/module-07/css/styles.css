@@ -259,6 +259,6 @@
 }
 .form_name:invalid:not(:placeholder-shown),
 .form_email:invalid:not(:placeholder-shown),
-.form_message:invalid:not(:placeholder-shown) {
+.message:invalid:not(:placeholder-shown) {
     box-shadow: inset 0 0 4px 3px #CE2029
 }
