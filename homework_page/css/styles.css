@@ -1,0 +1,48 @@
+.wrapper {
+    margin: 0 auto;
+    height: 100vh;
+    background: linear-gradient(to right, #bbd2c5, #536976, #292e49);
+    font-family: 'Sintony', sans-serif;
+}
+.name {
+    font-family: 'Kaushan Script';
+    color: #fff;
+    text-shadow: #333333 5px 5px 3px;
+    font-size: 50px
+}
+.header{
+    display: flex;
+    justify-content: center
+}
+
+.homework-links {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+.homework-item {
+    list-style: none;
+    width: 40%;
+    text-align: center;
+    margin: 2%
+
+}
+.homework-link {
+    display: block;
+    margin: 0 auto;
+    background-color: #3e5151;
+    color: #fff;
+    height: 10vh;
+    line-height: 10vh;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase
+    
+}
+.homework-link:hover {
+    background-color:#decba4;
+    transition-duration: 0.2s;
+    text-shadow: #333333 3px 3px 2px
+}
