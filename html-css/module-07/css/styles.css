@@ -1,0 +1,264 @@
+/* --FONTS--- */
+/* pacifico-regular - latin */
+@font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pacifico Regular'),
+         url('../fonts/pacifico-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* montserrat-regular - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Regular'),
+         url('../fonts/montserrat-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* montserrat-600 - latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Montserrat SemiBold'),
+         url('../fonts/montserrat-v12-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* montserrat-800 - latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Montserrat ExtraBold'),
+         url('../fonts/montserrat-v12-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+/* roboto-slab-regular - latin */
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Slab Regular'),
+         url('../fonts/roboto-slab-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  @font-face {
+    font-family: 'Droid Serif Italic';
+    font-weight: normal;
+    font-style: normal;
+    src: local('Droid Serif Italic');
+    src: url('../fonts/DroidSerif-Italic-webfont.woff') format('woff');
+
+}
+/* ---STYLES--- */
+.wrapper {
+    padding-top: 40px;
+    margin: 0 auto;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    max-width: 940px;
+    margin: 0 auto;
+    align-items: baseline;
+    padding-bottom: 100px
+
+}
+.name {
+    font-family: 'Pacifico';
+    font-size: 26px;
+    text-decoration: none;
+    color: #fed136
+}
+.name:hover {
+    color: #fed136;
+    text-shadow: 3px 2px 2px rgba(34, 34, 34, 0.7);
+    transition-duration: 0.3s
+}
+
+.nav_bar ul {
+    display: flex;
+}
+    
+.nav_bar li {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    text-transform: uppercase;
+    list-style: none;
+    font-size: 14px;
+    margin-left: 40px
+}
+.nav_bar a {
+    text-decoration: none;
+    color: #222222;
+
+}
+.nav_bar a:visited {
+    color: #222222
+}
+.nav_bar a:hover {
+    color: #fed136;
+    transition-duration: 0.2s;
+}
+.services {
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 120px
+}
+.services_header {
+    font-family: 'Montserrat';
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 20px 0
+}
+.services_second_line {
+    font-family: 'Droid Serif Italic';
+    color: #777777;
+    font-size: 16px;
+    margin-bottom: 80px;
+}
+.services_list{ 
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0
+}
+.services_list_item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.services_list_item h3 {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    text-align: center;
+    margin: 22px auto
+}
+.services_list_item p {
+    font-family: 'Roboto Slab';
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+    text-align: center;
+    margin: 0 auto
+
+}
+.services_list_item:nth-of-type(1)::before {
+    content: url(../img/basket.png);
+}
+.services_list_item:nth-of-type(2)::before {
+    content: url(../img/computer.png);
+}
+.services_list_item:nth-of-type(3)::before {
+    content: url(../img/lock.png);
+}
+.contact {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background: url("../img/Map_Image.png")#222222 no-repeat 100% 100%;
+    padding-top: 90px;
+    padding-bottom: 90px
+  }
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact_header {
+    font-family: 'Montserrat';
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 20px auto
+}
+.contact_second_line {
+    font-family: 'Droid Serif Italic';
+    color: #777777;
+    font-size: 16px;
+    margin: 0 auto 75px auto
+}
+.input {
+    width: 940px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.column_left {
+    width: 455px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form_name,
+.form_email,
+.form_subject {
+    min-height: 54px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    text-indent: 20px;
+    outline: none;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 600;
+    border: none
+}
+.message {
+    width: 455px;
+    max-height: 210px;
+    border-radius: 5px;
+    outline: none;
+    text-indent: 20px;
+    padding-top: 18px;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+}
+.form_name::placeholder,
+.form_email::placeholder,
+.form_subject::placeholder, 
+.message::placeholder {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    text-indent: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.message_button {
+    width: 240px;
+    height: 65px;
+    background-color: #fed136;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.message_button:hover {
+    color: #222222;
+    transition-duration: 0.2s;
+    cursor: pointer
+}
+.form_name:valid,
+.form_email:valid,
+.message:valid {
+    box-shadow: inset 0 0 4px 3px #228B22
+}
+.form_name:invalid,
+.form_email:invalid,
+.message:invalid {
+    box-shadow: 0 0 5px 3px transparent
+    
+}
+.form_name:invalid:not(:placeholder-shown),
+.form_email:invalid:not(:placeholder-shown),
+.message:invalid:not(:placeholder-shown) {
+    box-shadow: inset 0 0 4px 3px #CE2029
+}

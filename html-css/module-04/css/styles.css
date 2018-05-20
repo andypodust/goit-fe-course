@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.wrapper {
+    width: 1110px;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    height: auto;
+    overflow: hidden;
+}
+.header {
+    height: auto; 
+    overflow: hidden;
+}
+.name {
+    float: left;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #515151;
+    font-weight: lighter;
+}
+.name::first-letter {
+    color: #1abc9c;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: #0f0101;
+}
+.navigation li{
+    list-style-type: none;
+    float: right;
+    margin-right: 34px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+.navigation li a:hover {
+    color: #1abc9c;
+}
+
+h2 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: #515151;
+}
+h2:after {
+	display: block;
+	content: " ";
+	height: 7px;
+	width: 164px;
+	background: #1abc9c;
+    margin: 30px auto 90px;
+}
+.featured-products {
+    height: auto;
+    overflow: hidden;
+}
+.product {
+    width: 22.9%;
+	float: left;
+	margin-left: 30px;
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+.product img {
+    display: block;
+    max-width: 100%;
+}
+.product a{
+    display: inline-block;
+    width: 81.4%;
+    margin-right: -4px;
+    height: 40px;
+	background: #333333;
+	color: #fff;
+	font-size: 18px;
+    line-height: 32px;
+    text-align: left;
+	text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 0 5px 10px;
+}
+.price {
+    display: inline-block;
+	width: 20%;
+	margin-left: -4px;
+    height: 40px;
+	background-color: #999999;
+	color: #fff;
+    font-size: 18px;
+    text-align: center;
+	line-height: 32px;
+    text-transform: uppercase;
+    padding: 5px 10px 5px 10px;
+}
+.product:nth-of-type(4n+1) {
+    margin-left: 0;
+}
+.product:nth-of-type(n+5) {
+    margin-bottom: 0;
+}
+.product:hover a {
+    background: #1abc9c;
+}
+.product:hover span {
+    background: #7fd9c7
+}
+.articles figure {
+    float: left;
+    width: 31.5%;
+    margin-right: 30px;
+    text-align: left;
+    color: #555252;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 26px; 
+}
+
+.articles figcaption {
+    font-size: 18px; 
+    line-height: 26px;
+    font-weight: 400;
+}
+.articles figcaption::after {
+    display: block;
+	content: " ";
+	height: 3px;
+	width: 136px;
+	background: #1abc9c;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.articles figure:last-child {
+    margin-right: 0px;
+}
+button{
+	width: 160px;
+	height: 50px;
+    font-size: 14px;
+    margin-top: 15px;
+	color: #fff;
+	background: #1abc9c;
+	border: none;
+	border-radius: 3px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter
+}
