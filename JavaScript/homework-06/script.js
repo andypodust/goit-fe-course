@@ -34,10 +34,7 @@ class Hamburger {
      }
 
   removeTopping(topping) {
-    if (this._toppings.includes(topping)) {
-      this._toppings.pop(topping)
-    }
-    return this._toppings;
+    this._toppings = this._toppings.filter(val => val !== topping)
   }
 
   
