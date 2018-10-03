@@ -1,0 +1,45 @@
+* {
+  font-family: 'Kodchasan', sans-serif;
+  color: #644536
+}
+
+.stopwatch,
+.laps {
+  width: 50%;
+  min-height: 100px;
+  height: auto;
+  background-color: #B2675E;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 20px;
+}
+.laps {
+  background-color: #C4A381;
+  min-height: 50px;
+}
+
+
+.time {
+  font-size: 60px;
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between
+
+}
+.btn {
+  font-size: 25px;
+  width: 30%;
+  height: 40px;
+  border: none;
+  background-color: #EEF1BD;
+}
+.btn:hover {
+  background-color: #BBD686;
+}
