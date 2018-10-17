@@ -26,7 +26,7 @@ function fetchUserData(id, param) {
   .catch(error => console.error(error));
 };
 
-function handleAddUserBtn(ev) {
+function handleAllUserBtn(ev) {
   ev.preventDefault();
   fetchUserData('').then(data => {
     const names = data.data.reduce((acc, el) => acc + `<tr> <td>${el.id}</td>    <td>${el.name}</td>  <td>${el.age}</td> </tr>`,'');
