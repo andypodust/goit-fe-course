@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Search form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" /> -->
+</head>
+<body>
+    <main class="wrapper">
+        <form class="search js-GetAllUsers">
+            <button type="submit" id="js-users">getAllUsers</button>
+        </form>
+        <form class="search js-GetUserById">
+            <input type="text" placeholder="Enter user ID" required="">
+            <button type="submit" id="js-GetUserById">getUserById</button>
+          </form>
+          <form class="search js-removeUser">
+            <input type="text" placeholder="Enter user ID" required>
+            <button type="submit" id="js-removeUser">removeUser</button>
+          </form>
+          <form class="search js-addUser">
+            <input type="text" placeholder="Enter user name" required>
+            <input type="text" placeholder="Enter user age" required>
+            <button type="submit" id="js-addUser">addUser</button>
+          </form>
+          <form class="search-form js-updateUser">
+            <input type="text" placeholder="Enter user ID" required>
+            <input type="text" placeholder="Enter user name" required>
+            <input type="text" placeholder="Enter user age" required>
+            <button type="submit" id="js-updateUser">updateUser</button>
+          </form>
+          <div class="result">
+              <table></table>
+              <div></div>
+          </div>
+    </main>
+    <script src="javascript/script.js"></script>
+</body>
+</html>
