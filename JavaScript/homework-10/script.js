@@ -31,10 +31,10 @@ function handleAllUsersBtn(evt) {
   evt.preventDefault();
   fetchUserData('', {
     method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Custom-Header': 'custom value'
-    }
+     headers: {
+     Accept: 'application/json',
+     'Content-Type': 'application/json',
+  }
   }).then(data => {
       const names = data.data.reduce((acc, el) => acc + `<tr> <td>${el.id}</td>    <td>${el.name}</td>  <td>${el.age}</td> </tr>`,'');
       result.firstElementChild.innerHTML = `<caption>All users</caption><tr><td>ID</td><td>NAME</td><td>AGE</td></tr>${names}`;
