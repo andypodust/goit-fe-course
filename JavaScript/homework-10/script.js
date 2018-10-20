@@ -13,15 +13,6 @@ const updateUser = document.querySelector(".js-updateUser");
 
 getAllUsers.addEventListener("submit", handleAllUsersBtn);
 
-function fetchUserData(id, param){
-  return fetch(`https://test-users-api.herokuapp.com/users/${id}`, param)
-       .then(response => {
-           if(response.ok) return response.json();
-           throw new Error('error')
-       })
-       .catch(err => console.error(err));
-};
-
 function handleAllUsersBtn(ev) {
   ev.preventDefault();
   fetch(`https://test-users-api.herokuapp.com/users/`)
@@ -65,12 +56,12 @@ function handleAddUserBtn(ev) {
   const inputName = addUserBtn.previousElementSibling.previousElementSibling;
   const inputAge = addUserBtn.previousElementSibling;
   fetch(`https://test-users-api.herokuapp.com/users/`, {
-  method: 'POST',
-  body: JSON.stringify({ name: inputName.value , age: Number(inputAge.value)}),
-  headers: {
-  Accept: 'application/json',
-  'Content-Type': 'application/json',
-}})
+    method: 'POST',
+    body: JSON.stringify({ name: inputName.value , age: Number(inputAge.value)}),
+    headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  }})
   .then(response => {
     if(response.ok) return response.json();
     throw new Error('error')
@@ -84,44 +75,61 @@ function handleAddUserBtn(ev) {
   inputName.parentNode.reset();
   inputAge.parentNode.reset();
 };
-removeUser.addEventListener("submit", handleRemoveUserBtn);
-
-function handleRemoveUserBtn(ev) {
-  ev.preventDefault();
-  fetchUserData(inputId.value, {
-      method: 'DELETE',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }}).then(data => {
-          if (data.status !== 500) {
-              return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Удаление пользователя прошло успешно!</p>`);
-           } else {
-              return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Ошибка!</p>`);
-           }
-  });
-  inputId.parentNode.reset();
-};
 
 updateUser.addEventListener("submit", handleUpdateUserBtn);
 
 function handleUpdateUserBtn(evt) {
   evt.preventDefault();
-  fetchUserData(inputId.value, {
+  const inputId = updateUserBtn.previousElementSibling.previousElementSibling.previousElementSibling;
+  const inputName = updateUserBtn.previousElementSibling.previousElementSibling;
+  const inputAge = updateUserBtn.previousElementSibling;
+
+  fetch(`https://test-users-api.herokuapp.com/users/${inputId.value}`, {
       method: 'PUT',
       body: JSON.stringify({ name: inputName.value, age: Number(inputAge.value)}),
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }
+    .then(response => {
+      if(response.ok) return response.json();
+      throw new Error('error')
+    })
   }).then(data => {
       if (data.status === 200) {
-          return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Изменение данных пользователя прошло успешно!</p>`);
+          return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Данные пользователя изменены!</p>`);
        } else {
           return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Ошибка!</p>`);
        }
-  });
+  }).catch(err => console.error(err));
   inputId.parentNode.reset();
   inputName.parentNode.reset();
   inputAge.parentNode.reset();
 }
+
+removeUser.addEventListener("submit", handleRemoveUserBtn);
+
+function handleRemoveUserBtn(ev) {
+  ev.preventDefault();
+  const inputId = removeUserBtn.previousElementSibling;
+  fetch(`https://test-users-api.herokuapp.com/users/`, {
+    method: 'DELETE',
+    headers: {
+    Accept: 'application/json',
+      'Content-Type': 'application/json',
+      }})
+    .then(response => {
+        if(response.ok) return response.json();
+        throw new Error('error')
+      })
+    .then(data => {
+       if (data.status !== 500) {
+           return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Удаление пользователя прошло успешно!</p>`);
+        } else {
+           return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Ошибка!</p>`);
+        }
+    })
+    .catch(err => console.error(err));;
+      inputId.parentNode.reset();
+    };
+
