@@ -22,7 +22,6 @@ function fetchUserData(id, param){
            if(response.ok) return response.json();
            throw new Error('error')
        })
-       .then(data => console.log(data))
        .catch(err => console.error(err));
 };
 
