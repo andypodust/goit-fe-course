@@ -83,3 +83,29 @@ function handleRemoveUserBtn(ev) {
 };
 
 updateUser.addEventListener("submit", handleUdateUserBtn);
+
+function handleUpdateUserBtn(evt) {
+  evt.preventDefault();
+
+  const inputId = updateUserBtn.previousElementSibling.previousElementSibling.previousElementSibling;
+  const inputName = updateUserBtn.previousElementSibling.previousElementSibling;
+  const inputAge = updateUserBtn.previousElementSibling;
+
+  fetchUserData(inputId.value, {
+      method: 'PUT',
+      body: JSON.stringify({ name: inputName.value, age: Number(inputAge.value)}),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }
+  }).then(data => {
+      if (data.status === 200) {
+          return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Изменение данных пользователя прошло успешно!</p>`);
+       } else {
+          return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Ошибка!</p>`);
+       }
+  });
+  inputId.parentNode.reset();
+  inputName.parentNode.reset();
+  inputAge.parentNode.reset();
+}
