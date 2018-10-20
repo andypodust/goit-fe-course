@@ -41,7 +41,7 @@ getUserById.addEventListener("submit", handleGetUsersByIdBtn);
 function handleGetUsersByIdBtn(ev) {
   ev.preventDefault();
   const inputId = getUserByIdBtn.previousElementSibling;
-  fetch(`https://test-users-api.herokuapp.com/users/${inputId}`)
+  fetch(`https://test-users-api.herokuapp.com/users/${inputId.value}`)
   .then(response => {
     if(response.ok) return response.json();
     throw new Error('error')
