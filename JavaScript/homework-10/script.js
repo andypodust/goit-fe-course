@@ -21,7 +21,9 @@ function fetchUserData(id, param){
        .then(response => {
            if(response.ok) return response.json();
            throw new Error('error')
-       }).catch(err => console.error(err));
+       })
+       .then(data => console.log(data))
+       .catch(err => console.error(err));
 };
 
 function handleAllUsersBtn(ev) {
