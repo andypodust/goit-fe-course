@@ -48,12 +48,12 @@ function handleGetUsersByIdBtn(ev) {
 })
   .then(data => {
     if(data.status !== 200) {
-      return result.lastElementChild.insertAdjacentHTML('beforeend', `<p> Пользователь не найден!</p>`);
+      return result.lastElementChild.insertAdjacentHTML('beforeend', `<p> Пользователя не существует!</p>`);
     }
     result.lastElementChild.insertAdjacentHTML('beforeend', `<p>Name: ${data.data.name} Age: ${data.data.age}</p>`)
 
   })
-  .catch(err => console.error(err));;
+  .catch(err => console.error(err));
   
   getUserByIdBtn.parentNode.reset();
 };
@@ -64,16 +64,23 @@ function handleAddUserBtn(ev) {
   ev.preventDefault();
   const inputName = addUserBtn.previousElementSibling.previousElementSibling;
   const inputAge = addUserBtn.previousElementSibling;
-  fetchUserData('', {method: 'POST',
-      body: JSON.stringify({ name: inputName.value , age: Number(inputAge.value)}),
-      headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    }}).then(data => {
+  fetch(`https://test-users-api.herokuapp.com/users/`, {
+  method: 'POST',
+  body: JSON.stringify({ name: inputName.value , age: Number(inputAge.value)}),
+  headers: {
+  Accept: 'application/json',
+  'Content-Type': 'application/json',
+}})
+  .then(response => {
+    if(response.ok) return response.json();
+    throw new Error('error')
+  })
+  .then(data => {
       if (data.status === 201) {
-          return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Добавление пользователя прошло успешно!</p>`);
+          return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Новый пользователь добавлен!</p>`);
        }
-  });
+  })
+  .catch(err => console.error(err));
   inputName.parentNode.reset();
   inputAge.parentNode.reset();
 };
