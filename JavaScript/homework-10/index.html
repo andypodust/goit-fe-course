@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Search form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
 <body>
     <main class="wrapper">
@@ -36,6 +36,48 @@
               <div></div>
           </div>
     </main>
+    <script src="javascript/script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>O</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <form class="search-form js-allUsers">
+          <button class="mdc-btn" type="submit" id="js-users">getAllUsers</button>
+        </form>
+        <form class="search-form js-userById">
+            <input type="text" name="country" placeholder="Enter user ID" required="">
+            <button class="mdc-btn" type="submit" id="js-userById">getUserById</button>
+          </form>
+          <form class="search-form js-removeUser">
+                <input type="text" name="country" placeholder="Enter user ID" required>
+                <button class="mdc-btn" type="submit" id="js-removeUser">removeUser</button>
+              </form>
+          <form class="search-form js-addUser">
+            <input type="text" name="country" placeholder="Enter user name" required>
+            <input type="text" name="country" placeholder="Enter user age" required>
+            <button class="mdc-btn" type="submit" id="js-addUser">addUser</button>
+          </form>
+          <form class="search-form js-updateUser">
+            <input type="text" name="country" placeholder="Enter user user" required>
+            <input type="text" name="country" placeholder="Enter user name" required>
+            <input type="text" name="country" placeholder="Enter user age" required>
+            <button class="mdc-btn" type="submit" id="js-updateUser">updateUser</button>
+          </form>
+          <div class="result">
+                <table></table>
+                <div></div>
+          </div>
+      </div>
     <script src="javascript/script.js"></script>
 </body>
 </html>
