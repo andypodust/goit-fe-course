@@ -27,10 +27,16 @@ function fetchUserData(id, param){
 
 function handleAllUsersBtn(ev) {
   ev.preventDefault();
-  fetchUserData('').then(data => {
+  fetch(`https://test-users-api.herokuapp.com/users/`)
+  .then(response => {
+    if(response.ok) return response.json();
+    throw new Error('error')
+})
+  .then(data => {
       const names = data.data.reduce((acc, el) => acc + `<tr> <td>${el.id}</td>    <td>${el.name}</td>  <td>${el.age}</td> </tr>`,'');
       result.firstElementChild.innerHTML = `<caption>All users</caption><tr><td>ID</td><td>NAME</td><td>AGE</td></tr>${names}`;
-  });
+  })
+  .catch(err => console.error(err));
 };
 
 getUserById.addEventListener("submit", handleGetUsersByIdBtn);
