@@ -84,7 +84,7 @@ function handleRemoveUserBtn(ev) {
   inputId.parentNode.reset();
 };
 
-updateUser.addEventListener("submit", handleUdateUserBtn);
+updateUser.addEventListener("submit", handleUpdateUserBtn);
 
 function handleUpdateUserBtn(evt) {
   evt.preventDefault();
