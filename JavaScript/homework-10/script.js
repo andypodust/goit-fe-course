@@ -17,11 +17,12 @@ const updateUser = document.querySelector(".js-updateUser");
 getAllUsers.addEventListener("submit", handleAllUsersBtn);
 
 function fetchUserData(id, param){
-  return fetch("https://api.myjson.com/bins/k9i31", param)
+  return fetch(`https://test-users-api.herokuapp.com/users/${id}`, param)
        .then(response => {
            if(response.ok) return response.json();
            throw new Error('error')
        })
+       .then(data => console.log(data))
        .catch(err => console.error(err));
 };
 
