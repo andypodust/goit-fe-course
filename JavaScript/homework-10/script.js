@@ -112,7 +112,7 @@ removeUser.addEventListener("submit", handleRemoveUserBtn);
 function handleRemoveUserBtn(ev) {
   ev.preventDefault();
   const inputId = removeUserBtn.previousElementSibling;
-  fetch(`https://test-users-api.herokuapp.com/users/`, {
+  fetch(`https://test-users-api.herokuapp.com/users/${inputId.value}`, {
     method: 'DELETE',
     headers: {
     Accept: 'application/json',
