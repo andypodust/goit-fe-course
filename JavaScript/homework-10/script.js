@@ -91,10 +91,10 @@ function handleUpdateUserBtn(evt) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }
-    .then(response => {
-      if(response.ok) return response.json();
-      throw new Error('error')
-    })
+    
+  }).then(response => {
+    if(response.ok) return response.json();
+    throw new Error('error')
   }).then(data => {
       if (data.status === 200) {
           return result.lastElementChild.insertAdjacentHTML('beforeend',`<p>Данные пользователя изменены!</p>`);
