@@ -1,6 +1,6 @@
 'use strict';
 
-const getAllUsers = document.querySelector(".js-GetAllUsersBtn");
+const getAllUsers = document.querySelector("#js-GetAllUsers");
 const result = document.querySelector(".result");
 const getUserById = document.querySelector(".js-GetUserById");
 const inputId = document.querySelector(".js-inputId")
