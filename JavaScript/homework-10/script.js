@@ -65,7 +65,7 @@ function handleAddUserBtn(ev) {
   inputName.parentNode.reset();
   inputAge.parentNode.reset();
 };
-removeUser.addEventListener("submit", hamdleRemoveUserBtn);
+removeUser.addEventListener("submit", handleRemoveUserBtn);
 
 function handleRemoveUserBtn(ev) {
   ev.preventDefault();
