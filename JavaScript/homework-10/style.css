@@ -4,9 +4,9 @@
     justify-content: center;
     width: 700px;
     flex-wrap: wrap;
-  padding-top: 20px;
-  min-width: 480px;
-  margin: 0 auto;
+    padding-top: 20px;
+    min-width: 480px;
+    margin: 0 auto;
 }
 :active, :hover, :focus {
     outline: 0;
