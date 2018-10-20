@@ -2,16 +2,13 @@
 
 const getAllUsers = document.querySelector(".js-allUsers");
 const result = document.querySelector(".result");
-const getUserById = document.querySelector(".js-GetUserById");
-const inputId = document.querySelector(".js-inputId")
-const getUserByIdBtn = document.querySelector(".js-GetUserByIdBtn");
-const removeUserBtn = document.querySelector(".js-removeUserBtn");
-const removeUser = document.querySelector(".js-removeUser");
+const getUserById = document.querySelector(".js-userById");
+const getUserByIdBtn = document.querySelector("#js-userById");
 const addUser = document.querySelector(".js-addUser");
-const addUserBtn = document.querySelector(".js-addUserBtn");
-const inputName = document.querySelector(".js-inputName")
-const inputAge = document.querySelector(".js-inputAge")
-const updateUserBtn = document.querySelector(".js-updateUserBtn");
+const addUserBtn = document.querySelector("#js-addUser");
+const removeUserBtn = document.querySelector("#js-removeUser");
+const removeUser = document.querySelector(".js-removeUser");
+const updateUserBtn = document.querySelector("#js-updateUser");
 const updateUser = document.querySelector(".js-updateUser");
 
 getAllUsers.addEventListener("submit", handleAllUsersBtn);
@@ -43,13 +40,21 @@ getUserById.addEventListener("submit", handleGetUsersByIdBtn);
 
 function handleGetUsersByIdBtn(ev) {
   ev.preventDefault();
-  fetchUserData(inputId.value).then(data => {
+  const inputId = getUserByIdBtn.previousElementSibling;
+  fetch(`https://test-users-api.herokuapp.com/users/${inputId}`)
+  .then(response => {
+    if(response.ok) return response.json();
+    throw new Error('error')
+})
+  .then(data => {
     if(data.status !== 200) {
       return result.lastElementChild.insertAdjacentHTML('beforeend', `<p> Пользователь не найден!</p>`);
     }
     result.lastElementChild.insertAdjacentHTML('beforeend', `<p>Name: ${data.data.name} Age: ${data.data.age}</p>`)
 
-  });
+  })
+  .catch(err => console.error(err));;
+  
   getUserByIdBtn.parentNode.reset();
 };
 
@@ -57,6 +62,8 @@ addUser.addEventListener("submit", handleAddUserBtn);
 
 function handleAddUserBtn(ev) {
   ev.preventDefault();
+  const inputName = addUserBtn.previousElementSibling.previousElementSibling;
+  const inputAge = addUserBtn.previousElementSibling;
   fetchUserData('', {method: 'POST',
       body: JSON.stringify({ name: inputName.value , age: Number(inputAge.value)}),
       headers: {
