@@ -1,0 +1,63 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+.wrapper {
+    width: 100vw;
+}
+ul  {
+    list-style: none;
+}
+
+.section-container,
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    min-width: 550px;
+    width: 50%;
+
+}
+.form-section {
+    width: 30%;
+    text-align: center
+}
+
+.checkbox-list {
+    padding-left: 0
+}
+
+.button {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin: 50px;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    font-size: 16px;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+}
+.button:hover{
+    background-color:#4095c6;
+}
+.button :active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.list-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    width: 40%;
+    background-color: azure;
+    margin: 40px;
+    border: #4eb5f1 solid 2px;
+}
