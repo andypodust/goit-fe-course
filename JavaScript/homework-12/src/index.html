@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Link List</title>
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <div class="wrapper">
+      <section class="form-sect">
+          <form action="#" class="form js-form">
+              <input type="text" class="form-text">
+              <input type="submit" class="button" value="Add link">
+            </form>
+      </section>
+
+      <div class="link-cards-list js-list-cards"></div>
+
+    </div>
+
+    <template class="js-template">
+        <ul class="link-card">
+          <li><img src="{{image}}" alt="" class="card-img"></li>
+          <li><a name="{{url}}" href="{{url}}" class="js-li-url">{{url}}</a></li>
+          <li><span>Description: {{description}}</span></li>
+          <li><button class=" button del-card-btn">Delete</button></li>
+        </ul>
+      </template>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+</body>
+</html>
