@@ -11,7 +11,7 @@ const temp = Handlebars.compile(source);
 
 
 Object.keys(localStorage).forEach(element => {
-    fetch(`https://api.linkpreview.net/?key=5bb3d3d85d2689e5629a2de473cd5362919f9edc33853&q=${element}`)
+    fetch(`https://api.linkpreview.net/?key=5bd2bd1e159d4b2a003a3ba33eb6c33b918a0ef915a13=${element}`)
 	.then(response => {
 		if(response.ok) return response.json();
     })
