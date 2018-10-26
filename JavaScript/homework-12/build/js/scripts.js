@@ -9,7 +9,7 @@ var refs = {
 var source = refs.template.innerHTML.trim();
 var temp = Handlebars.compile(source);
 Object.keys(localStorage).forEach(function (element) {
-  fetch("https://api.linkpreview.net/?key=5bd2be4683f4df4868c2be896cecac30712acbad1b051=".concat(element)).then(function (response) {
+  fetch("https://api.linkpreview.net/?key=5bd2be4683f4df4868c2be896cecac30712acbad1b051&q=".concat(element)).then(function (response) {
     if (response.ok) return response.json();
   }).then(function (data) {
     refs.listCards.insertAdjacentHTML('afterbegin', temp(data));
@@ -27,7 +27,7 @@ function handleFormSubmit(evt) {
     return alert('Невалидный URL! Попробуйте еще раз.');
   }
 
-  fetch("https://api.linkpreview.net/?key=5bd2be4683f4df4868c2be896cecac30712acbad1b051=".concat(refs.input.value)).then(function (response) {
+  fetch("https://api.linkpreview.net/?key=5bd2be4683f4df4868c2be896cecac30712acbad1b051&q=".concat(refs.input.value)).then(function (response) {
     if (response.ok) return response.json();
   }).then(function (data) {
     if (localStorage.getItem(data.url) !== null) return alert('Такая закладка уже есть!');
