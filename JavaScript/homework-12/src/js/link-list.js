@@ -11,7 +11,7 @@ const temp = Handlebars.compile(source);
 
 
 Object.keys(localStorage).forEach(element => {
-    fetch(`https://api.linkpreview.net/?key=5bd2bd1e159d4b2a003a3ba33eb6c33b918a0ef915a13=${element}`)
+    fetch(`https://api.linkpreview.net/?key=5bd2be4683f4df4868c2be896cecac30712acbad1b051=${element}`)
 	.then(response => {
 		if(response.ok) return response.json();
     })
@@ -33,7 +33,7 @@ function handleFormSubmit(evt) {
 	} 
 
     
-    fetch(`https://api.linkpreview.net/?key=5bd2bd1e159d4b2a003a3ba33eb6c33b918a0ef915a13=${refs.input.value}`)
+    fetch(`https://api.linkpreview.net/?key=5bd2be4683f4df4868c2be896cecac30712acbad1b051=${refs.input.value}`)
 	.then(response => {
 		if(response.ok) return response.json();
     })
