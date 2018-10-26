@@ -33,7 +33,7 @@ function handleFormSubmit(evt) {
 	} 
 
     
-    fetch(`https://api.linkpreview.net/?key=5bb3d3d85d2689e5629a2de473cd5362919f9edc33853&q=${refs.input.value}`)
+    fetch(`https://api.linkpreview.net/?key=5bd2bd1e159d4b2a003a3ba33eb6c33b918a0ef915a13=${refs.input.value}`)
 	.then(response => {
 		if(response.ok) return response.json();
     })
